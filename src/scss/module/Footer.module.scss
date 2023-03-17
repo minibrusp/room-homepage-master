@@ -1,0 +1,26 @@
+@use '../variables' as var;
+
+.footer {
+  width: 100%;
+  margin: 2rem auto 0 auto;
+  text-align: center;
+  
+  p {
+    border-top: 1px dotted var.$black;
+    display: inline-block;
+    padding-top: 1rem;
+
+
+  }
+  a { 
+    color: var.$black; 
+    text-decoration: none;
+    display: inline-block;
+    padding: .5rem .3rem;
+
+    &:hover {
+      color: var.$darkGray;
+      background-color: var.$black;
+    }
+  }
+}

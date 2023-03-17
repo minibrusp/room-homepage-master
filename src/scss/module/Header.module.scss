@@ -1,0 +1,19 @@
+.header {
+
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+
+  &__nav {
+    text-align: center;
+    padding: 3.5rem 2rem;
+    position: relative;
+
+    @media screen and (min-width: 769px) {
+      display: flex;
+      justify-content: flex-start;
+      gap: 4.5rem;
+      text-align: left;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@use '../variables' as var;
+
+.button {
+  border: 1px solid var.$black;
+  background-color: var.$black;
+  padding: 1.2rem 1.75rem;
+  cursor: pointer;
+  transition: .3s ease-out;
+
+  @media screen and (min-width: 769px) {
+    padding: 2.11rem 2.645rem;
+  }
+
+  img {
+    height: 21px;
+    width: 12px;
+
+    @media screen and (min-width: 769px) {
+      height: unset;
+      width: unset;
+    }
+  }
+
+  &:hover, &:focus-visible {
+    outline: none;
+    background-color: var.$veryDarkGray;
+    border-color: var.$veryDarkGray;
+  }
+
+  &:active {
+    img {
+      transform: scale(1.2);
+    }
+  }
+
+  &:disabled {
+    cursor: unset; 
+  }
+}

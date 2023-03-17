@@ -1,0 +1,17 @@
+@keyframes backNforth {
+  0% {
+    transform: translateX(0rem);
+  }
+
+  50% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    transform: translateX(0rem);
+  }
+}
+
+@mixin animationHover {
+  animation: backNforth 2s ease-out infinite;
+}

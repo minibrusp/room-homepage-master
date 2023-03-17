@@ -1,0 +1,14 @@
+.header__nav__burger {
+
+  &__container {
+    position: absolute;
+    z-index: 5;
+    cursor: pointer;
+
+    @media screen and (min-width: 769px) {
+      display: none;
+    }
+
+  }
+
+}
