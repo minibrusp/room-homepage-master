@@ -1,5 +1,9 @@
+@use '../variables' as var;
+
 .article__hero__image__container {
   grid-row: 1 / 2;
+  background-color: var.$black;
+  overflow: hidden;
 
   @media screen and (min-width: 1024px) {
     grid-column: 1 / 2;

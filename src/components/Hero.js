@@ -8,10 +8,11 @@ import mobileHeroImage3 from '../images/mobile-image-hero-3.jpg'
 import btnIconLeft from '../images/icon-angle-left.svg'
 import btnIconRight from '../images/icon-angle-right.svg'
 
+import { gsap } from 'gsap'
 
 import style from '../scss/module/Hero.module.scss'
 import { LeftButton, RightButton } from './Button'
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import HeroImage from './HeroImage'
 import HeroDescText from './HeroDescText'
 
@@ -47,17 +48,43 @@ const Hero = ({children}) => {
   const [heroData, setHeroData] = useState(null)
   const [navigator, setNavigator] = useState(0)
 
+  const heroImageRef = useRef(null)
+  const heroHeaderRef = useRef(null)
+  const heroDescRef = useRef(null)
+
   useEffect(() => {
     setHeroData(heroInitial)
   }, [])
 
+  const handleAnimation = (direction, domElement) => {
+
+    const value = (direction == 'right') ? '5%' : '-5%'
+
+    gsap.from(domElement, { 
+      opacity: 0.5, 
+      duration: 0.3,
+    })
+    gsap.from(domElement, {
+      x: value,
+      duration: 0.1,
+    })
+  }
+
+  
+
   const handleButtonClick = (direction) => {
     if(direction === 'left') {
       if(navigator == 0) return
+      handleAnimation(direction, heroImageRef.current)
+      handleAnimation(direction, heroHeaderRef.current)
+      handleAnimation(direction, heroDescRef.current)
       setNavigator(prevValue => prevValue - 1)
     }
     if(direction === 'right') {
       if(navigator == 2) return
+      handleAnimation(direction, heroImageRef.current)
+      handleAnimation(direction, heroHeaderRef.current)
+      handleAnimation(direction, heroDescRef.current)
       setNavigator(prevValue => prevValue + 1)
     }
   }
@@ -65,16 +92,25 @@ const Hero = ({children}) => {
   return (
     <section className={style.article__hero}>
 
-        <HeroImage heroData={heroData} navigator={navigator} />
+        <HeroImage 
+          heroData={heroData} 
+          navigator={navigator}
+          heroImageRef = {heroImageRef} 
+        />
 
         <div className={style.article__hero__btn__container}>
-          <LeftButton imgUrl={btnIconLeft} handleButtonClick={handleButtonClick}  />
-          <RightButton imgUrl={btnIconRight} handleButtonClick={handleButtonClick}   />
+          <LeftButton imgUrl={btnIconLeft} handleButtonClick={handleButtonClick} navigator={navigator}  />
+          <RightButton imgUrl={btnIconRight} handleButtonClick={handleButtonClick} navigator={navigator} />
         </div>
 
         <div className={style.article__hero__desc__container}>
 
-          <HeroDescText heroData={heroData} navigator={navigator} />
+          <HeroDescText 
+            heroData={heroData} 
+            navigator={navigator}
+            heroHeaderRef={heroHeaderRef}
+            heroDescRef={heroDescRef}
+          />
 
           {children}
 

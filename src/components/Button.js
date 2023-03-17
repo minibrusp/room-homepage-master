@@ -1,11 +1,30 @@
 
+import {useState } from 'react'
 import style from '../scss/module/Button.module.scss'
 
 export const Button = ({imgUrl, direction, ...props}) => {
-  const { handleButtonClick } = props
+  const { handleButtonClick, navigator } = props
+  const [isDisabled, setDisaled] = useState(false)
+
+
+  const disableOrEnableButtons = () => {
+    setDisaled(true)
+
+    setTimeout(() => {
+      setDisaled(false)
+    }, 600)
+  }
+
   return (
     <>
-     <button className={style.button} onClick={() => handleButtonClick(direction)} >
+     <button 
+        className={style.button} 
+        onClick={(e) => {
+          disableOrEnableButtons()
+          handleButtonClick(direction)
+        }} 
+        disabled={isDisabled}
+      >
         <img src={imgUrl} alt={`button ${direction}`} />
       </button>
     </>
