@@ -4,7 +4,6 @@ import imageLight from '../images/image-about-light.jpg'
 import style from '../scss/module/About.module.scss'
 
 const About = () => {
-  console.log(`About rendered`)
   return ( 
     <section className={style.article__about}>
 

@@ -1,6 +1,5 @@
 const HeroDescText = ({heroData, navigator}) => {
 
-  console.log('hero desc text rendered')
 
   return ( 
     <div className="article__hero__desc__text">

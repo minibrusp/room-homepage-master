@@ -2,11 +2,10 @@ import style from '../scss/module/HeroImage.module.scss'
 
 const HeroImage = ({heroData, navigator }) => {
 
-  console.log('hero image rendered')
 
   return ( 
     <div className={style.article__hero__image__container}>
-        {/* {heroData && <img src={heroData[navigator].image.mobile} alt="Flowers" />} */}
+
         {
         heroData &&
         <picture>

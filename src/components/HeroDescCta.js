@@ -1,7 +1,6 @@
 import iconArrow from '../images/icon-arrow.svg'
 
 const HeroDescCta = () => {
-  console.log(`hero desc cta rendered`)
   return ( 
     <div className="article__hero__desc__cta">
       <a href="#">

@@ -46,8 +46,6 @@ const heroInitial = [
 const Hero = ({children}) => {
   const [heroData, setHeroData] = useState(null)
   const [navigator, setNavigator] = useState(0)
-  console.log(heroData)
-  console.log(`hero rendered`)
 
   useEffect(() => {
     setHeroData(heroInitial)

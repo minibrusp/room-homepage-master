@@ -3,7 +3,6 @@ import style from '../scss/module/Button.module.scss'
 
 export const Button = ({imgUrl, direction, ...props}) => {
   const { handleButtonClick } = props
-  console.log(`button ${direction} rendered`)
   return (
     <>
      <button className={style.button} onClick={() => handleButtonClick(direction)} >
