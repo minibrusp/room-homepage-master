@@ -3,7 +3,7 @@ import {useState } from 'react'
 import style from '../scss/module/Button.module.scss'
 
 export const Button = ({imgUrl, direction, ...props}) => {
-  const { handleButtonClick, navigator } = props
+  const { handleButtonClick } = props
   const [isDisabled, setDisaled] = useState(false)
 
 
