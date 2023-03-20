@@ -90,7 +90,7 @@ const Hero = ({children}) => {
   }
 
   return (
-    <section className={style.article__hero}>
+    <header className={style.article__hero}>
 
         <HeroImage 
           heroData={heroData} 
@@ -117,7 +117,7 @@ const Hero = ({children}) => {
         </div>
 
 
-      </section>
+      </header>
   );
 }
  
