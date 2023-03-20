@@ -26,7 +26,7 @@
 
 ### Links
 
--   Solution URL: [here]()
+-   Solution URL: [here](https://www.frontendmentor.io/solutions/room-homepage-react-sass-gsap-webpack-VNrPl4E7CY)
 -   Live Site URL: [here](https://room-homepage-master-woad.vercel.app/)
 
 ### Built with
@@ -34,5 +34,6 @@
 -   REACT 18
 -   REACT HOOKS
 -   SASS MODULES(DART)
+-   GSAP
 -   WEBPACK 5
 -   Mobile-first workflow
