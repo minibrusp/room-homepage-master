@@ -15,5 +15,9 @@
       gap: 4.5rem;
       text-align: left;
     }
+
+    @media screen and (min-width: 1440px) {
+      padding: 4.5vw 4.5vw;
+    }
   }
 }
